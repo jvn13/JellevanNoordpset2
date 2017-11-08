@@ -1,7 +1,12 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">JellevanNoord-pset2</string>
     <string name="description">Welcome to Mat Libs!\n\nI will ask you to fill in words to complete a
         story. You won\'t be able to see the whole story until you are done filling in all the
         missing words. That\'s part of the fun.\n\nYou can choose a specific story underneath or just go with a random one.\n
         After that you can click to button to start the game...</string>
+    <string name="placeholder">Please enter a(n) %1$s</string>
+    <string name="remaining">%1$s word(s) remaining</string>
+    <string name="empty_error">No word was filled out, please try again</string>
+
+    <string name="display_story_title">Your Mat Libs Story!</string>
 </resources>

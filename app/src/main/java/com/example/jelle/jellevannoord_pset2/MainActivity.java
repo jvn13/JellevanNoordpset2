@@ -2,7 +2,6 @@ package com.example.jelle.jellevannoord_pset2;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
-import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Story story = new Story(assetManager.open(filename + ".txt"));
                     Intent intent = new Intent(MainActivity.this, FillWordActivity.class);
-                    intent.putExtra("TEST", story);
+                    intent.putExtra("STORY", story);
                     startActivity(intent);
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
