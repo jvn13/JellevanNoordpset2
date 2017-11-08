@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     Story story = new Story(assetManager.open(filename + ".txt"));
                     Intent intent = new Intent(MainActivity.this, FillWordActivity.class);
                     intent.putExtra("STORY", story);
+
                     startActivity(intent);
                 } catch (IOException e) {
                     // TODO Auto-generated catch block

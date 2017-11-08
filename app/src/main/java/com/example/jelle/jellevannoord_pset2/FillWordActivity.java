@@ -40,7 +40,7 @@ public class FillWordActivity extends AppCompatActivity {
                     story.fillInPlaceholder(word);
                     if(story.isFilledIn()) {
                         // The story is finished, go to the story display activity
-                        Intent wordIntent = new Intent(FillWordActivity.this, FillWordActivity.class);
+                        Intent wordIntent = new Intent(FillWordActivity.this, DisplayStory.class);
                         wordIntent.putExtra("STORY", story);
                         startActivity(wordIntent);
                     } else {
@@ -51,5 +51,12 @@ public class FillWordActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(FillWordActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
