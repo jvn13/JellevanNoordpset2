@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="storyItems">
+        <item name="random">Random</item>
+        <item name="madlib0_simple">Simple</item>
+        <item>Tarzan</item>
+        <item>University</item>
+        <item>Clothes</item>
+        <item>Dance</item>
+    </array>
+</resources>
