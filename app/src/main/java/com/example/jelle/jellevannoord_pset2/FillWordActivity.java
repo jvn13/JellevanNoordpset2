@@ -18,17 +18,18 @@ public class FillWordActivity extends AppCompatActivity {
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         final Story story = (Story) intent.getSerializableExtra("STORY");
-        // set the description for the next placeholder
+        // Set the description for the next placeholder
         TextView placeholder = findViewById(R.id.placeholderTextView);
         String next = story.getNextPlaceholder();
         placeholder.setText(getResources().getString(R.string.placeholder, next));
-
+        // Print the number of remaining placeholders
         TextView remaining = findViewById(R.id.remainingTextView);
         remaining.setText(getResources().getString(R.string.remaining, String.valueOf(story.getPlaceholderRemainingCount())));
 
         Button okButton = findViewById(R.id.okButton);
         okButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                // Get the entered word
                 EditText fillInText = findViewById(R.id.fillInText);
                 String word = fillInText.getText().toString();
                 if(word.matches("")) {
@@ -44,6 +45,7 @@ public class FillWordActivity extends AppCompatActivity {
                         wordIntent.putExtra("STORY", story);
                         startActivity(wordIntent);
                     } else {
+                        // Continue to the next FillWordActivity to fill in the next word
                         Intent wordIntent = new Intent(FillWordActivity.this, FillWordActivity.class);
                         wordIntent.putExtra("STORY", story);
                         startActivity(wordIntent);
@@ -55,6 +57,7 @@ public class FillWordActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        // When the back button is pressed, the user goes all the way back to the MainActivity
         Intent intent = new Intent(FillWordActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
